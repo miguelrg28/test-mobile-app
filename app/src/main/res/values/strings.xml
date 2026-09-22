@@ -51,4 +51,6 @@
         <item>Ciencias de la Computación</item>
     </string-array>
 
+    <string name="btn_add_txt">Añade tus datos</string>
+    <string name="btn_edit_txt">Editar tus datos</string>
 </resources>

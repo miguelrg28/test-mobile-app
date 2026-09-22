@@ -52,6 +52,12 @@ class FirstFragment : Fragment() {
         binding.tvMatricula.text = "Matrícula: $matriculaSaved"
         binding.tvCarrera.text = "Carrera: $carreraSaved"
 
+        if(nameSaved == "No hay datos guardados"){
+            binding.btnEdit.text = getString(R.string.btn_add_txt)
+        } else {
+            binding.btnEdit.text = getString(R.string.btn_edit_txt)
+        }
+
         binding.btnEdit.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
