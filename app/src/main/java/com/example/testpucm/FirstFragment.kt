@@ -42,6 +42,15 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var sharedPref = requireActivity().getSharedPreferences("DatosEstudiante", android.content.Context.MODE_PRIVATE)
+
+        var nameSaved = sharedPref.getString("key_nombre", "No hay datos guardados")
+        var matriculaSaved = sharedPref.getString("key_matricula", "No hay datos guardados")
+        var carreraSaved = sharedPref.getString("key_carrera", "No hay datos guardados")
+
+        binding.tvName.text = nameSaved
+        binding.tvMatricula.text = "Matrícula: $matriculaSaved"
+        binding.tvCarrera.text = "Carrera: $carreraSaved"
 
         binding.btnEdit.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)

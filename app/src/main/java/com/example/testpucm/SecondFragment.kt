@@ -49,6 +49,17 @@ class SecondFragment : Fragment() {
             val nombre = binding.editTextText.text.toString()
             val matricula = binding.editTextText2.text.toString()
             val carrera = binding.spinnerCarrera.selectedItem.toString()
+
+            var sharedPref = requireActivity().getSharedPreferences("DatosEstudiante", android.content.Context.MODE_PRIVATE)
+            var editor = sharedPref.edit()
+
+            editor.putString("key_nombre", nombre)
+            editor.putString("key_matricula", matricula)
+            editor.putString("key_carrera", carrera)
+
+            editor.apply()
+
+            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
     }
     override fun onDestroyView() {
