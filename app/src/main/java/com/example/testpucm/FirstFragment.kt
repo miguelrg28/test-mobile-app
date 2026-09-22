@@ -26,16 +26,7 @@ class FirstFragment : Fragment() {
     ): View {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
-        AlertDialog.Builder(requireContext())
-            .setTitle("Prueba")
-            .setMessage("Probando...")
-            .setPositiveButton("Nitido"){ dialog, _ ->
-            dialog.dismiss()
-        }
-            .setNegativeButton("Quitar"){dialog, _ ->
-                dialog.dismiss()
-            }
-            .show()
+
         return binding.root
 
     }
