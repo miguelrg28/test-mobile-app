@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.testpucm.databinding.FragmentFirstBinding
-import android.app.AlertDialog;
+import android.app.AlertDialog
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -42,11 +42,11 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var sharedPref = requireActivity().getSharedPreferences("DatosEstudiante", android.content.Context.MODE_PRIVATE)
+        val sharedPref = requireActivity().getSharedPreferences("DatosEstudiante", android.content.Context.MODE_PRIVATE)
 
-        var nameSaved = sharedPref.getString("key_nombre", "No hay datos guardados")
-        var matriculaSaved = sharedPref.getString("key_matricula", "No hay datos guardados")
-        var carreraSaved = sharedPref.getString("key_carrera", "No hay datos guardados")
+        val nameSaved = sharedPref.getString("key_nombre", "No hay datos guardados")
+        val matriculaSaved = sharedPref.getString("key_matricula", "No hay datos guardados")
+        val carreraSaved = sharedPref.getString("key_carrera", "No hay datos guardados")
 
         binding.tvName.text = nameSaved
         binding.tvMatricula.text = "Matrícula: $matriculaSaved"
