@@ -32,17 +32,17 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
+        binding.btnGuardar.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
 
         var adapter = android.widget.ArrayAdapter.createFromResource(
             requireContext(),
-            R.array.opciones_carrera, // El nombre que le pusimos en strings.xml
+            R.array.carrera_options, // El nombre que le pusimos en strings.xml
             android.R.layout.simple_spinner_item // Diseño básico de Android para items
         )
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item))
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerCarrera.adapter = adapter
 
         binding.btnGuardar.setOnClickListener {
